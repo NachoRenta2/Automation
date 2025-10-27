@@ -7,7 +7,7 @@ def test_login(login_in_driver):
     driver = login_in_driver
     assert '/inventory.html' in driver.current_url
     products = driver.find_elements(By.CLASS_NAME, "inventory_item")#busco todos los elementos
-    productos[0].find_element(By.TAG_NAME,"button").click()#busco solo el primero
+    products[0].find_element(By.TAG_NAME,"button").click()#busco solo el primero
     count_cart = driver.find_element(By.CLASS_NAME, "shopping_cart_badge").text
     assert count_cart == 1
 
