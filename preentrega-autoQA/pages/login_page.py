@@ -36,12 +36,12 @@ class LoginPage:
     def login_completo(self,usuario,password):
         self.completar_user(usuario)
         self.completar_pass(password)
-        time.sleep (3)
+        time.sleep (10)
         self.click_button()
         return self
 
     def obtener_error(self):
-        div_error = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,"error-message-container h3")))
+        div_error = self.wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR,".error-message-container h3")))
         return div_error.text
 # si quiero probar login incorrecto tendria que hacer otra funcion y ver los errores
         #este archivo reemplazaria el utils
